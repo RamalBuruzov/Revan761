@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT HTML/CSS</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #f0f0f0;
+      }
+      #chat {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .message {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .user {
+        background: #d1e7dd;
+        text-align: right;
+      }
+      .bot {
+        background: #f8d7da;
+        text-align: left;
+      }
+      #inputArea {
+        display: flex;
+        margin-top: 20px;
+      }
+      #prompt {
+        flex: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      #send {
+        padding: 10px 20px;
+        margin-left: 10px;
+        border-radius: 5px;
+        background: #0d6efd;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat"></div>
+    <div id="inputArea">
+      <input type="text" id="prompt" placeholder="Sualını yaz..." />
+      <button id="send">Göndər</button>
+    </div>
+
+    <script>
+      const chatDiv = document.getElementById("chat");
+      const promptInput = document.getElementById("prompt");
+      const sendBtn = document.getElementById("send");
+
+      sendBtn.addEventListener("click", async () => {
+        const message = promptInput.value;
+        if (!message) return;
+
+        addMessage(message, "user");
+        promptInput.value = "";
+
+        const res = await fetch("http://127.0.0.1:8000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message }),
+        });
+
+        const data = await res.json();
+        addMessage(data.response, "bot");
+      });
+
+      function addMessage(text, type) {
+        const msgDiv = document.createElement("div");
+        msgDiv.className = "message " + type;
+        msgDiv.innerText = text;
+        chatDiv.appendChild(msgDiv);
+        chatDiv.scrollTop = chatDiv.scrollHeight;
+      }
+    </script>
+  </body>
+</html>
