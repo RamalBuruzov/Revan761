@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Futbolçular</title>
+
+    <style>
+      body {
+        counter-reset: football;
+        font-family: Calibri, sans-serif;
+        padding: 40px;
+      }
+
+      ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 260px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        font-size: large;
+      }
+
+      li::before {
+        content: counter(football);
+        counter-increment: football;
+        width: 40px;
+        background: navy;
+        color: white;
+        text-align: center;
+        padding: 8px 0;
+        font-weight: bold;
+        margin-right: 15px;
+        font-size: 20px;
+      }
+
+      ol {
+        counter-reset: item;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ol>
+      <li>Kady</li>
+      <li>Messi</li>
+      <li>Lamine Yamal</li>
+      <li>Zoubir</li>
+      <li>Harry Kane</li>
+      <li>Ronaldo</li>
+      <li>Ricardo Quaresma</li>
+    </ol>
+  </body>
+</html>
