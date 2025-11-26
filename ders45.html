@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFolio</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: black;
+      }
+
+      nav {
+        width: 100%;
+        padding: 20px 40px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid lightgray;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+
+      /* HEADER SECTION */
+      .hero {
+        display: flex;
+        padding: 40px;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .hero img {
+        width: 450px;
+        border-radius: 5px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        margin-bottom: 20px;
+      }
+
+      .hero button {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 3px;
+      }
+
+      .services {
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+      }
+
+      .services h2 {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+
+      .services p {
+        color: gray;
+        margin-bottom: 40px;
+      }
+
+      .service-boxes {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 20px;
+      }
+
+      .box {
+        width: 280px;
+        padding: 30px 20px;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        background-color: white;
+        text-align: center;
+      }
+
+      .box-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+        color: black;
+      }
+
+      .box h3 {
+        margin-bottom: 10px;
+        color: black;
+      }
+
+      .box p {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2>DFOLIO</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <img
+        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        alt="office"
+      />
+      <div>
+        <h2>We are creative</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+          dolor sit amet.
+        </p>
+        <button>CONTACT US</button>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>OUR SERVICES</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+      <div class="service-boxes">
+        <div class="box">
+          <div class="box-icon">✉️</div>
+          <h3>Email Marketing</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="box">
+          <div class="box-icon">💻</div>
+          <h3>Web Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="box">
+          <div class="box-icon">📢</div>
+          <h3>Facebook Marketing</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
